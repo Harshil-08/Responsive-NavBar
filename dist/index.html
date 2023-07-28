@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[url('../assets/asthetic-wallpaper.webp')] bg-cover ">
+    <header>
+        <nav class="bg-[#303030] drop-shadow-md shadow-[#000000a6]">
+            <div class="navBar p-1 md:p-4 text-gray-100 flex items-center justify-between mx-2 md:mx-8">
+
+                <div class="left hover:text-[#2dc9d4] hover:cursor-pointer text-lg">Responsive NavBar</div>
+
+                <div class="right">
+                    <div class="hidden md:flex items-center md:gap-8 text-slate-200">
+                        <a class="hover:text-[#2dc9d4]" href="#">Home</a>
+                        <a class="hover:text-[#2dc9d4]" href="#">Contribute</a>
+                        <a class="hover:text-[#2dc9d4]" href="#">Documentation</a>
+                        <a class="hover:text-[#2dc9d4]" href="#">Contact Us</a>
+                        <div class="search hidden md:flex gap-2">
+                            <input class="rounded-md p-1 outline-0 " type="search" placeholder="Search something">
+                            <button>
+                                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 6a8 8 0 1 1 14.32 4.906l5.387 5.387a1 1 0 0 1-1.414 1.414l-5.387-5.387A8 8 0 0 1 2 10z"
+                                        fill="#ffffff" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button id="btn" class="md:hidden">
+                        <div class="p-2 mt-1 space-y-1.5 rounded shadow">
+                            <span class="block w-5 h-0.5 bg-gray-100"></span>
+                            <span class="block w-5 h-0.5 bg-gray-100"></span>
+                            <span class="block w-5 h-0.5 bg-gray-100"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div
+            class="sidBar md:hidden drop-shadow-xl shadow-[#000000a6] rounded-sm absolute p-4 right-0 text-gray-100 bg-[#333333]">
+            <ul class="grid gap-5">
+                <li class="hover:text-[#2dc9d4]"> <a href="">Home</a></li>
+                <li class="hover:text-[#2dc9d4]"> <a href="">Contribute</a></li>
+                <li class="hover:text-[#2dc9d4]"> <a href="">Documentation</a></li>
+                <li class="hover:text-[#2dc9d4]"> <a href="">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+    <script src="script.js"></script>
+</body>
+
+</html>
