@@ -6,12 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .HamburgerMenu {
+            display: none;
+        }
+
+        .hamburger-btn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5;
+            margin-top: 5px;
+            margin-left: 130px;
+            /* Move the hamburger button to the left */
+        }
+
+        .bar {
+            display: block;
+            width: 22px;
+            height: 3px;
+            margin: 5px auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Add animation for the active state of the hamburger button */
+        .hamburger-btn.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-btn.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Hide navigation links at small width */
+        @media (max-width: 768px) {
+            .HamburgerMenu {
+                display: block;
+            }
+        }
+    </style>
+
 </head>
 
-<body class="bg-[url('../assets/asthetic-wallpaper.webp')] bg-cover ">
+<body>
     <header>
         <nav class="bg-[#303030] drop-shadow-md shadow-[#000000a6]">
-            <div class="navBar p-1 md:p-4 text-gray-100 flex items-center justify-between mx-2 md:mx-8">
+            <div class="navBar p-1 md:p-4 text-gray-100 flex items-center justify-between mx-1 md:mx-8">
 
                 <div class="left hover:text-[#2dc9d4] hover:cursor-pointer text-lg">Responsive NavBar</div>
 
@@ -34,19 +82,19 @@
                         </div>
                     </div>
 
-                    <button id="btn" class="md:hidden">
-                        <div class="p-2 mt-1 space-y-1.5 rounded shadow">
-                            <span class="block w-5 h-0.5 bg-gray-100"></span>
-                            <span class="block w-5 h-0.5 bg-gray-100"></span>
-                            <span class="block w-5 h-0.5 bg-gray-100"></span>
-                        </div>
-                    </button>
+                    <div class="HamburgerMenu md:hidden gap-4">
+                        <button class="hamburger-btn" aria-label="Toggle Menu">
+                            <span class="bar bg-white "></span>
+                            <span class="bar bg-white "></span>
+                            <span class="bar bg-white "></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
-        <div
-            class="sidBar md:hidden drop-shadow-xl shadow-[#000000a6] rounded-sm absolute p-4 right-0 text-gray-100 bg-[#333333]">
-            <ul class="grid gap-5">
+        <div id="sideBar"
+            class=" md:hidden drop-shadow-xl shadow-[#000000a6] rounded-sm hidden absolute p-4 right-0 text-gray-100 bg-[#333333]">
+            <ul class="grid gap-5 menu-list">
                 <li class="hover:text-[#2dc9d4]"> <a href="">Home</a></li>
                 <li class="hover:text-[#2dc9d4]"> <a href="">Contribute</a></li>
                 <li class="hover:text-[#2dc9d4]"> <a href="">Documentation</a></li>
