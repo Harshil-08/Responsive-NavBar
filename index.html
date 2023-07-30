@@ -1,109 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive NavBar</title>
-    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./dist/style.css" />
     <style>
-        .hide {
-            display: none;
-        }
+      .hide {
+        display: none;
+      }
 
+      .HamburgerMenu {
+        display: none;
+      }
+
+      .hamburger-btn {
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 5;
+        margin-top: 5px;
+        margin-left: 130px;
+        /* Move the hamburger button to the left */
+      }
+
+      .bar {
+        display: block;
+        width: 22px;
+        height: 3px;
+        margin: 5px auto;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Add animation for the active state of the hamburger button */
+      .hamburger-btn.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger-btn.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-btn.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* Hide navigation links at small width */
+      @media (max-width: 768px) {
         .HamburgerMenu {
-            display: none;
+          display: block;
         }
-
-        .hamburger-btn {
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5;
-            margin-top: 5px;
-            margin-left: 130px;
-            /* Move the hamburger button to the left */
-        }
-
-        .bar {
-            display: block;
-            width: 22px;
-            height: 3px;
-            margin: 5px auto;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Add animation for the active state of the hamburger button */
-        .hamburger-btn.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .hamburger-btn.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger-btn.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* Hide navigation links at small width */
-        @media (max-width: 768px) {
-            .HamburgerMenu {
-                display: block;
-            }
-        }
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+          109.6deg,
+          rgba(164, 250, 245, 1) 11.2%,
+          rgba(4, 67, 163, 1) 91.1%
+        );
+      }
     </style>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <nav class="bg-[#303030] drop-shadow-md shadow-[#000000a6]">
-            <div class="navBar p-1 md:p-4 text-gray-100 flex items-center justify-between mx-1 md:mx-8">
+      <nav class="bg-[#303030] drop-shadow-md shadow-[#000000a6]">
+        <div
+          class="navBar p-1 md:p-4 text-gray-100 flex items-center justify-between mx-1 md:mx-8"
+        >
+          <div class="left hover:text-[#2dc9d4] hover:cursor-pointer text-lg">
+            Responsive NavBar
+          </div>
 
-                <div class="left hover:text-[#2dc9d4] hover:cursor-pointer text-lg">Responsive NavBar</div>
-
-                <div class="right">
-                    <div class="hidden md:flex items-center md:gap-8 text-slate-200">
-                        <a class="hover:text-[#2dc9d4]" href="#">Home</a>
-                        <a class="hover:text-[#2dc9d4]" href="#">Contribute</a>
-                        <a class="hover:text-[#2dc9d4]" href="#">Documentation</a>
-                        <a class="hover:text-[#2dc9d4]" href="#">Contact Us</a>
-                        <div class="search hidden md:flex gap-2">
-                            <input class="rounded-md p-1 outline-0 " type="search" placeholder="Search something">
-                            <button>
-                                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 6a8 8 0 1 1 14.32 4.906l5.387 5.387a1 1 0 0 1-1.414 1.414l-5.387-5.387A8 8 0 0 1 2 10z"
-                                        fill="#ffffff" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="HamburgerMenu md:hidden gap-4">
-                        <button class="hamburger-btn" aria-label="Toggle Menu">
-                            <span class="bar bg-white "></span>
-                            <span class="bar bg-white "></span>
-                            <span class="bar bg-white "></span>
-                        </button>
-                    </div>
-                </div>
+          <div class="right">
+            <div class="hidden md:flex items-center md:gap-8 text-slate-200">
+              <a class="hover:text-[#2dc9d4]" href="#">Home</a>
+              <a
+                class="hover:text-[#2dc9d4]"
+                href="https://github.com/amitsuthar69/Responsive-NavBar"
+                target="_blank"
+                >Contribute</a
+              >
+              <a class="hover:text-[#2dc9d4]" href="#">Documentation</a>
+              <a class="hover:text-[#2dc9d4]" href="#">Contact Us</a>
+              <div class="search hidden md:flex gap-2">
+                <input
+                  class="rounded-md p-1 outline-0"
+                  style="color: black"
+                  type="search"
+                  placeholder="Search"
+                />
+                <button>
+                  <svg
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 6a8 8 0 1 1 14.32 4.906l5.387 5.387a1 1 0 0 1-1.414 1.414l-5.387-5.387A8 8 0 0 1 2 10z"
+                      fill="#ffffff"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-        </nav>
-        <div id="sideBar"
-            class=" md:hidden drop-shadow-xl shadow-[#000000a6] rounded-sm hidden absolute p-4 right-0 text-gray-100 bg-[#333333]">
-            <ul class="grid gap-5 menu-list">
-                <li class="hover:text-[#2dc9d4]"> <a href="">Home</a></li>
-                <li class="hover:text-[#2dc9d4]"> <a href="">Contribute</a></li>
-                <li class="hover:text-[#2dc9d4]"> <a href="">Documentation</a></li>
-                <li class="hover:text-[#2dc9d4]"> <a href="">Contact Us</a></li>
-            </ul>
+
+            <div class="HamburgerMenu md:hidden gap-4">
+              <button class="hamburger-btn" aria-label="Toggle Menu">
+                <span class="bar bg-white"></span>
+                <span class="bar bg-white"></span>
+                <span class="bar bg-white"></span>
+              </button>
+            </div>
+          </div>
         </div>
+      </nav>
+      <div
+        id="sideBar"
+        class="md:hidden drop-shadow-xl shadow-[#000000a6] rounded-sm hidden absolute p-4 right-0 text-gray-100 bg-[#333333]"
+      >
+        <ul class="grid gap-5 menu-list">
+          <li class="hover:text-[#2dc9d4]"><a href="">Home</a></li>
+          <li class="hover:text-[#2dc9d4]"><a href="">Contribute</a></li>
+          <li class="hover:text-[#2dc9d4]"><a href="">Documentation</a></li>
+          <li class="hover:text-[#2dc9d4]"><a href="">Contact Us</a></li>
+        </ul>
+      </div>
     </header>
     <script src="./dist/script.js"></script>
-</body>
-
+  </body>
 </html>
